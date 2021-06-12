@@ -1,0 +1,24 @@
+create a db folder 
+
+> mkdir db
+
+mongod -port 3000 -dbpath "./db"
+mongo --port 3000 --authenticationDatabase admin
+mongo -port 3000 -u dbAdmin -p test --authenticationDatabase admin
+
+create user
+load(`vaccineStatus/data/createUser.js`)
+
+load data
+> load(`vaccineStatus/data/sampleUser.js`)
+
+
+
+
+mongod -port 4200 -dbpath "./db"
+mongo --port 4200 --authenticationDatabase admin
+mongo -port 4200 -u dbAdmin -p test --authenticationDatabase admin
+
+
+
+db.shutdownServer()
